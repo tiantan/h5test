@@ -17,7 +17,8 @@ def all_case():
 if __name__ == '__main__':
 
         now_time = time.strftime("%Y_%m_%d_%H_%M_%S")  # 获取时间
-        fp = open('G:/python/h5testt/report/' + now_time + '_result.html', 'wb')
+        genmulu=os.path.abspath(os.path.join(os.getcwd(), ".."))
+        fp = open(genmulu+'/report/' + now_time + '_result.html', 'wb')
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='test', description='qingkang')
         # 实例化TextTestRunner类
         #runner = unittest.TextTestRunner()
