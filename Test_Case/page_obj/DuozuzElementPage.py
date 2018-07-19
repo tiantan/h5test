@@ -9,7 +9,7 @@ class DuozuzElement(Driver):
     # 模块菜单
     menu_loc = (By.ID, "19")
     # 多组关系管理菜单元素
-    menuItemDuoGX_loc = (By.XPATH, "//*[@id='submenudiv']/div[1]/ul/li[1]/ul/li/a")
+    menuItemDuoGX_loc = (By.XPATH, "//*[@id='submenudiv']/div[2]/ul/li[1]/ul/li/a")
     # 保存按钮
     save_data_loc = (By.ID, "save_data")
     # 新增

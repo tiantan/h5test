@@ -17,6 +17,7 @@ def all_case():
 if __name__ == '__main__':
 
         now_time = time.strftime("%Y_%m_%d_%H_%M_%S")  # 获取时间
+        #获取到根目录路径
         genmulu=os.path.abspath(os.path.join(os.getcwd(), ".."))
         fp = open(genmulu+'/report/' + now_time + '_result.html', 'wb')
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='test', description='qingkang')
