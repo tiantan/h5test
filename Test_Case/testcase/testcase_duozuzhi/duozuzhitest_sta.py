@@ -54,11 +54,14 @@ class MyTestCase(myunit.Mytest):
         DuozuzElement(self.driver).Click_save_data()
         #time.sleep(3)
         self.driver.switch_to_default_content()
+
         # 显式等待 元素等待
         WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.ID, 'kendoNotifyDiv')))
-        # 从标签中获取文本内容
-        print self.driver.find_element_by_id('kendoNotifyDiv').get_attribute('textContent')
 
+        # 从标签中获取文本内容
+        testContent=self.driver.find_element_by_id('kendoNotifyDiv').get_attribute('textContent')
+        #判断toast
+        self.assertEqual(u'操作成功！',testContent)
         # 验证是否保存成功
         '''
         listsmemo = self.driver.find_elements_by_id("td_VIRTUALDEPTLIST_MEMO")
