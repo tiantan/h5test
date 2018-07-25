@@ -1,12 +1,13 @@
 # -*- coding:utf-8 -*-
 from selenium import webdriver
 import time
+from selenium.webdriver.common.by import By
 
 
 class Driver(object):
 
     def __init__(self, driver):
-        self.driver = driver #=webdriver.Chrome()
+        self.driver = driver  # =webdriver.Chrome()
 
     '''   
    def start(self, driver_name):
@@ -38,3 +39,7 @@ class Driver(object):
         else:
             print("time out")
         return views
+
+    # 切换到组织编辑窗口
+    def switch_frame(self, value):
+        self.driver.switch_to_frame(value)

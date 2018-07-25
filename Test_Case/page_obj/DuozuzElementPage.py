@@ -9,7 +9,9 @@ class DuozuzElement(Driver):
     # 模块菜单
     menu_loc = (By.ID, "19")
     # 多组关系管理菜单元素
-    menuItemDuoGX_loc = (By.XPATH, "//*[@id='submenudiv']/div[2]/ul/li[1]/ul/li/a")
+    #//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a
+    #menuItemDuoGX_loc = (By.XPATH, '//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a')
+    menuItemDuoGX_loc=(By.LINK_TEXT,'多组织管理')
     # 保存按钮
     save_data_loc = (By.ID, "save_data")
     # 新增
@@ -31,7 +33,8 @@ class DuozuzElement(Driver):
 
     # 切换到组织编辑窗口
     def switch_to_frame(self):
-        self.driver.switch_to_frame("iframe190301")
+        self.switch_frame("iframe190301")
+        #self.driver.switch_to_frame("iframe190301")
 
     # 点击最后一条数据
     def getVIRTUALDEPTLIST_VDEPTNAME(self):
@@ -63,18 +66,15 @@ class DuozuzElement(Driver):
     def Click_btnAdd(self):
         self.element_wait(*self.btnAdd_loc).click()
 
-    #点击编辑按钮
+    # 点击编辑按钮
     def Click_btnEdit(self):
         self.element_wait(*self.btnEdit_loc).click()
 
-    #获取一列最后一个值
-    def getMEMOText(self,emdoid):
+    # 获取一列最后一个值
+    def getMEMOText(self, emdoid):
         # 验证是否保存成功
         listsmemo = self.element_wait(emdoid)
         print(listsmemo[len(listsmemo) - 1].text)
         MEMOText = listsmemo[len(listsmemo) - 1].text
         return MEMOText
 
-
-    #// *[ @ id = "bmTree_tv_active"] / div / span
-    #// *[ @ id = "bmTree_tv_active"] / div / span

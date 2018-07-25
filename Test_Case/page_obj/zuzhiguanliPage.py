@@ -12,7 +12,9 @@ class zuzElement(Driver):
     # 模块菜单
     menu_loc = (By.ID, "19")
     # 多组关系管理菜单元素
-    menuItemDuoGX_loc = (By.XPATH, '//*[@id="submenudiv"]/div[1]/ul/li[2]/ul/li/a[1]')
+                   # // *[ @ id = "submenudiv"] / div[2] / ul / li[2] / ul / li / a[1]
+    menuItemDuoGX_loc = (By.LINK_TEXT, '//*[@id="submenudiv"]/div[2]/ul/li[2]/ul/li/a[1]')
+
 
     '''设立'''
     # 保存按钮

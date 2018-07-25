@@ -55,8 +55,8 @@ class MyTestCase(myunit.Mytest):
         #time.sleep(3)
         self.driver.switch_to_default_content()
 
-        # 显式等待 元素等待
-        WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.ID, 'kendoNotifyDiv')))
+        # 显式等待 元素等待 返回的是element
+        print WebDriverWait(self.driver, 20).until(EC.presence_of_element_located((By.ID, 'kendoNotifyDiv'))).get_attribute('textContent')
 
         # 从标签中获取文本内容
         testContent=self.driver.find_element_by_id('kendoNotifyDiv').get_attribute('textContent')
@@ -92,8 +92,6 @@ class MyTestCase(myunit.Mytest):
         # 关闭窗口
         DuozuzElement(self.driver).tabCloseCurrent()
         time.sleep(10)
-
-
 
     '''
     def test_3_quit(self):
