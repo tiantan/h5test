@@ -9,9 +9,8 @@ class DuozuzElement(Driver):
     # 模块菜单
     menu_loc = (By.ID, "19")
     # 多组关系管理菜单元素
-    #//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a
-    #menuItemDuoGX_loc = (By.XPATH, '//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a')
-    menuItemDuoGX_loc=(By.LINK_TEXT,'多组织管理')
+    # menuItemDuoGX_loc = (By.XPATH, '//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a')
+    menuItemDuoGX_loc = (By.LINK_TEXT, '多组织管理')
     # 保存按钮
     save_data_loc = (By.ID, "save_data")
     # 新增
@@ -34,7 +33,7 @@ class DuozuzElement(Driver):
     # 切换到组织编辑窗口
     def switch_to_frame(self):
         self.switch_frame("iframe190301")
-        #self.driver.switch_to_frame("iframe190301")
+        # self.driver.switch_to_frame("iframe190301")
 
     # 点击最后一条数据
     def getVIRTUALDEPTLIST_VDEPTNAME(self):
@@ -77,4 +76,3 @@ class DuozuzElement(Driver):
         print(listsmemo[len(listsmemo) - 1].text)
         MEMOText = listsmemo[len(listsmemo) - 1].text
         return MEMOText
-

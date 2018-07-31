@@ -25,7 +25,7 @@ class MyTestCase(myunit.Mytest):
         self.wb.implicitly_wait(30)
     '''
     def test_2_btnEdit(self):
-        #        duozuzElement=DuozuzElement(self.wb)
+        #duozuzElement=DuozuzElement(self.wb)
         self.driver.get("http://localhost:8082/web.hr")
         try:
             login(self.driver).login("hr2", "longshine")
@@ -33,8 +33,13 @@ class MyTestCase(myunit.Mytest):
             print('time out')
         self.driver.switch_to_default_content()
         time.sleep(3)
+
         # 规划
         DuozuzElement(self.driver).menuClick()
+
+        #直接调用元素
+        print self.driver.find_element(*DuozuzElement(self.driver).menu_loc).text
+
         time.sleep(3)
         # 多组织关系管理
         DuozuzElement(self.driver).menuItemDuoGXClick()
@@ -62,6 +67,7 @@ class MyTestCase(myunit.Mytest):
         testContent=self.driver.find_element_by_id('kendoNotifyDiv').get_attribute('textContent')
         #判断toast
         self.assertEqual(u'操作成功！',testContent)
+
         # 验证是否保存成功
         '''
         listsmemo = self.driver.find_elements_by_id("td_VIRTUALDEPTLIST_MEMO")

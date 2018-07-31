@@ -43,3 +43,9 @@ class Driver(object):
     # 切换到组织编辑窗口
     def switch_frame(self, value):
         self.driver.switch_to_frame(value)
+
+    #关闭
+    def close(self):
+        self.driver.close()
+
+
