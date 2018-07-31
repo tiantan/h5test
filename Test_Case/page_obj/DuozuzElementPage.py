@@ -10,7 +10,7 @@ class DuozuzElement(Driver):
     menu_loc = (By.ID, "19")
     # 多组关系管理菜单元素
     # menuItemDuoGX_loc = (By.XPATH, '//*[@id = "submenudiv"]/div[2]/ul/li[1]/ul/li/a')
-    menuItemDuoGX_loc = (By.LINK_TEXT, '多组织管理')
+    menuItemDuoGX_loc = ('LINK_TEXT', '多组织管理')
     # 保存按钮
     save_data_loc = (By.ID, "save_data")
     # 新增
@@ -27,7 +27,7 @@ class DuozuzElement(Driver):
 
     # 多组关系管理菜单
     def menuItemDuoGXClick(self):
-        self.menuItemDuoGX = self.element_wait(*self.menuItemDuoGX_loc)
+        self.menuItemDuoGX = self.findElement(self.menuItemDuoGX_loc)
         self.menuItemDuoGX.click()
 
     # 切换到组织编辑窗口
